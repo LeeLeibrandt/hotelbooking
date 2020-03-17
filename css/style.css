@@ -1,41 +1,33 @@
 body{
     font-family: monospace;
+    background-color: rgb(231, 231, 231);
 }
 
 .navbar-brand{
     width: 200px;
 }
 
-.container{
-    width: 100%;
-    height: auto;
-    line-height: 2rem;
-    background-color: rgb(243, 243, 243);
-}
-
 .form{
     text-align: center;
-}
-
-.banner{
-    line-height: 2rem;
-    background-color: rgb(243, 243, 243);
 }
 
 .grid-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: rgb(243, 243, 243);
     padding: 10px;
+    width: 40%;
 }
 
 .grid-item {
-    margin: 20px;
+    width: 60%;
     background-color: rgb(243, 243, 243);
-    border: 2px solid rgba(0, 0, 0, 0.8);
+    border: 2px solid white;
+    margin: 20px;
     padding: 20px;
+    line-height: 1.5rem;
 }
 
 img{
-    width: 350px;
+    width: 400px;
+    padding: 20px;
 }
