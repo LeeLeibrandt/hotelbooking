@@ -1,17 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
     <link rel="stylesheet" href="css/style.css" text="text/css">
-    <title>Hotel Trivago</title>
+    <title>Hotel Trivago</title> 
   </head>
-  <body>
 
+  <body>
    <!--MAIN PROGRAM-->
+
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="img/AVENGERS LOGO VERSION 2.png" width="200px"alt="avenger">
@@ -23,7 +21,7 @@
       <!--user inputs-->
       <form action="index.php" method="post" class="form">
           Please provide following details below:<br>
-          <input type="text" name="name" placeholder="Nam4e" required><br>
+          <input type="text" name="name" placeholder="Name" required><br>
           <input type="text" name="surname" placeholder="Surname" required><br>
           <input type="email" name="email" placeholder="Email" required><br>
 
@@ -50,12 +48,44 @@
               <?php } ?>
           </select><br>
 
-          Check-In <input type="date" name="calenderIn" required> 
-          Check-Out <input type="date" name="calenderOut" required><br>
+          <script type="text/javascript">
+            //Getting number of days
+            function GetDays()
+            {
+              var dropdt = new Date(document.getElementById("drop_date").value);
+              var pickdt = new Date(document.getElementById("pick_date").value);
+              return parseInt((dropdt - pickdt) / (24 * 3600 * 1000));
+            }
+            //Calling number days
+            function cal()
+            {
+              if(document.getElementById("drop_date"))
+              {
+                document.getElementById("numdays2").value=GetDays();
+              }  
+            }
+          </script>
+
+          <div id="reserve_form">
+            <div id="pickup_date"><p><label class="form">Check-In:</label><input type="date" class="textbox" id="pick_date" name="pickup_date" onchange="cal()"/></p></div>
+            <div id="dropoff_date"><p><label class="form">Check-Out:</label><input type="date" class="textbox" id="drop_date" name="dropoff_date" onchange="cal()"></p></div>
+            <div id="numdays"><label class="form">Number of days:</label><input type="text" class="textbox" id="numdays2" name="numdays"/>
+          </div>
         <input type="submit">
       </form>
     </div>
-    <br>  
+
+    <?php
+      /*Getting total price of days
+      $_POST['numdays'] = $numberdays;
+      $totalprice;
+      
+      $totalprice = $numberdays * $hotel->price; 
+     echo $totalprice; */
+    ?>
+
+    <br> 
+
     <center>
     <?php
     
@@ -74,8 +104,10 @@
           $hotel -> name = $_POST['hotel1'];
           $hotel -> photo =  'sun.jpeg';
           $hotel -> price = 500;
-          $hotel -> checkin = $_POST['calenderIn'];
-          $hotel -> checkout = $_POST['calenderOut'];
+          $hotel -> checkin = $_POST['pickup_date'];
+          $hotel -> checkout = $_POST['dropoff_date'];
+          $hotel -> numberdays = $_POST['numdays'];
+          $hotel -> totalprice = $totalprice;
           $hotel -> pool = 'true';
           $hotel -> bar = 'true';
           $hotel -> spa = 'true';
@@ -90,8 +122,10 @@
           $hotel -> name = $_POST['hotel2'];
           $hotel -> photo = 'break.jpg'; 
           $hotel -> price = 350;
-          $hotel -> checkin = $_POST['calenderIn'];
-          $hotel -> checkout = $_POST['calenderOut'];
+          $hotel -> checkin = $_POST['pickup_date'];
+          $hotel -> checkout = $_POST['dropoff_date'];
+          $hotel -> numberdays = $_POST['numdays'];
+          $hotel -> totalprice = $totalprice;
           $hotel -> pool = 'true';
           $hotel -> bar = 'false';
           $hotel -> spa = 'false';
@@ -110,8 +144,10 @@
             $hotel -> name = $_POST['hotel2'];
             $hotel -> photo =  'sun.jpeg';
             $hotel -> price = 500;
-            $hotel -> checkin = $_POST['calenderIn'];
-            $hotel -> checkout = $_POST['calenderOut'];
+            $hotel -> checkin = $_POST['pickup_date'];
+            $hotel -> checkout = $_POST['dropoff_date'];
+            $hotel -> numberdays = $_POST['numdays'];
+            $hotel -> totalprice = $totalprice;
             $hotel -> pool = 'true';
             $hotel -> bar = 'true';
             $hotel -> spa = 'true';
@@ -126,8 +162,10 @@
             $hotel -> name = $_POST['hotel2'];
             $hotel -> photo = 'break.jpg'; 
             $hotel -> price = 350;
-            $hotel -> checkin = $_POST['calenderIn'];
-            $hotel -> checkout = $_POST['calenderOut'];
+            $hotel -> checkin = $_POST['pickup_date'];
+            $hotel -> checkout = $_POST['dropoff_date'];
+            $hotel -> numberdays = $_POST['numdays'];
+            $hotel -> totalprice = $totalprice;
             $hotel -> pool = 'true';
             $hotel -> bar = 'false';
             $hotel -> spa = 'false';
@@ -140,8 +178,13 @@
     ?>
     </center>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <?php
+     /* $numberdays = $_POST['numdays'];
+      $totalprice;
+      
+      $totalprice = $numberdays * $hotel->price; 
+      echo $totalprice;*/
+    ?>
+
   </body>
 </html>   

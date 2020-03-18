@@ -42,6 +42,11 @@
             echo "<center><font size = '5px'>Daily Rate: R".$this->price . "</font size></center>".self::BR;
             echo "<center><font size = '4px'> Check In: ".$this->checkin."</font size></center>";
             echo "<center><font size = '4px'> Check Out: ".$this->checkout."</font size></center>";
+            echo "<center><font size = '4px'> Number of days: ".$this->numberdays."</font size></center>";
+            //echo "<center><font size = '5px'>Total price: R".$totalprice."</font size></center>";
+            echo "<br />";
+            echo "<center><font size = '4px'>Benefits:</font size></center>";
+            echo "<br />";
             echo "Pool: ".$this->pool.self::BR;
             echo "bar: ".$this->bar.self::BR;
             echo "spa: ".$this->spa.self::BR;
@@ -67,6 +72,11 @@
             echo "<center><font size = '5px'>Daily Rate: R".$this->price . "</font size></center>".self::BR;
             echo "<center><font size = '4px'> Check In: ".$this->checkin."</font size></center>";
             echo "<center><font size = '4px'> Check Out: ".$this->checkout."</font size></center>";
+            echo "<center><font size = '4px'> Number of days: ".$this->numberdays."</font size></center>";
+            //echo "<center><font size = '5px'>Total price: R".$totalprice."</font size></center>";
+            echo "<br />";
+            echo "<center><font size = '4px'>Benefits:</font size></center>";
+            echo "<br />";
             echo "Pool: ".$this->pool.self::BR;
             echo "bar: ".$this->bar.self::BR;
             echo "spa: ".$this->spa.self::BR;
