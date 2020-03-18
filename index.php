@@ -100,10 +100,10 @@
           $hotel -> checkout = $_POST['dropoff_date'];
           $hotel -> numberdays = $_POST['numdays'];
           //$hotel -> totalprice = $totalprice;
-          $hotel -> pool = 'true';
-          $hotel -> bar = 'true';
-          $hotel -> spa = 'true';
-          $hotel -> kidfriendly = 'true';
+          $hotel -> pool = 'Yes';
+          $hotel -> bar = 'Yes';
+          $hotel -> spa = 'Yes';
+          $hotel -> kidfriendly = 'Yes';
 
           $hotel -> print_hotel();
         }
@@ -118,10 +118,10 @@
           $hotel -> checkout = $_POST['dropoff_date'];
           $hotel -> numberdays = $_POST['numdays'];
          // $hotel -> totalprice = $totalprice;
-          $hotel -> pool = 'true';
-          $hotel -> bar = 'false';
-          $hotel -> spa = 'false';
-          $hotel -> kidfriendly = 'true';
+          $hotel -> pool = 'Yes';
+          $hotel -> bar = 'No';
+          $hotel -> spa = 'No';
+          $hotel -> kidfriendly = 'YesYes';
 
           $hotel -> print_hotel();
         }
@@ -130,6 +130,7 @@
         $totalprice;
           
         $totalprice = $numberdays * $hotel->price; 
+        echo "<br />";
         echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
       echo "</div>"; 
 
@@ -146,10 +147,10 @@
             $hotel -> checkout = $_POST['dropoff_date'];
             $hotel -> numberdays = $_POST['numdays'];
             //$hotel -> totalprice = $totalprice;
-            $hotel -> pool = 'true';
-            $hotel -> bar = 'true';
-            $hotel -> spa = 'true';
-            $hotel -> kidfriendly = 'true';
+            $hotel -> pool = 'Yes';
+            $hotel -> bar = 'Yes';
+            $hotel -> spa = 'Yes';
+            $hotel -> kidfriendly = 'Yes';
 
             $hotel -> print_hotel();
           }
@@ -164,10 +165,10 @@
             $hotel -> checkout = $_POST['dropoff_date'];
             $hotel -> numberdays = $_POST['numdays'];
             //$hotel -> totalprice = $totalprice;
-            $hotel -> pool = 'true';
-            $hotel -> bar = 'false';
-            $hotel -> spa = 'false';
-            $hotel -> kidfriendly = 'true';
+            $hotel -> pool = 'Yes';
+            $hotel -> bar = 'No';
+            $hotel -> spa = 'No';
+            $hotel -> kidfriendly = 'Yes';
 
             $hotel -> print_hotel();
           }
@@ -177,11 +178,14 @@
           $totalprice;
             
           $totalprice = $numberdays * $hotel->price; 
+          echo "<br />";
           echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
 
         echo "</div>"; 
       } 
-
+    ?>
+    <?php
+     echo "<button><a href='booking.php'>Book now</a></button>";
     ?>
     </center>
 

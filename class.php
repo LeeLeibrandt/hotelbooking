@@ -3,7 +3,7 @@
         //user input details on submit
         if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email']))
         {
-            //declare variables
+            //declare global variables
             $name = $_POST['name'];
             $surname = $_POST['surname'];
             $email = $_POST['email'];
