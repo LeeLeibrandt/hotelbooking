@@ -75,23 +75,15 @@
       </form>
     </div>
 
-    <?php
-      /*Getting total price of days
-      $_POST['numdays'] = $numberdays;
-      $totalprice;
-      
-      $totalprice = $numberdays * $hotel->price; 
-     echo $totalprice; */
-    ?>
-
+  
     <br> 
 
     <center>
     <?php
-    
+      
       //LINKING EXTERNAL PHP PAGE
       include 'class.php';
-      
+
       //Logical arguments
       //Logical outputs for hotel one
       if($_POST)
@@ -107,7 +99,7 @@
           $hotel -> checkin = $_POST['pickup_date'];
           $hotel -> checkout = $_POST['dropoff_date'];
           $hotel -> numberdays = $_POST['numdays'];
-          $hotel -> totalprice = $totalprice;
+          //$hotel -> totalprice = $totalprice;
           $hotel -> pool = 'true';
           $hotel -> bar = 'true';
           $hotel -> spa = 'true';
@@ -125,7 +117,7 @@
           $hotel -> checkin = $_POST['pickup_date'];
           $hotel -> checkout = $_POST['dropoff_date'];
           $hotel -> numberdays = $_POST['numdays'];
-          $hotel -> totalprice = $totalprice;
+         // $hotel -> totalprice = $totalprice;
           $hotel -> pool = 'true';
           $hotel -> bar = 'false';
           $hotel -> spa = 'false';
@@ -133,7 +125,13 @@
 
           $hotel -> print_hotel();
         }
-        echo "</div>";  
+        //Getting total price of hotels
+        $numberdays = $_POST['numdays'];
+        $totalprice;
+          
+        $totalprice = $numberdays * $hotel->price; 
+        echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
+      echo "</div>"; 
 
         //Logical outputs for hotel two
         echo "<div class='grid-item'>";
@@ -147,7 +145,7 @@
             $hotel -> checkin = $_POST['pickup_date'];
             $hotel -> checkout = $_POST['dropoff_date'];
             $hotel -> numberdays = $_POST['numdays'];
-            $hotel -> totalprice = $totalprice;
+            //$hotel -> totalprice = $totalprice;
             $hotel -> pool = 'true';
             $hotel -> bar = 'true';
             $hotel -> spa = 'true';
@@ -165,7 +163,7 @@
             $hotel -> checkin = $_POST['pickup_date'];
             $hotel -> checkout = $_POST['dropoff_date'];
             $hotel -> numberdays = $_POST['numdays'];
-            $hotel -> totalprice = $totalprice;
+            //$hotel -> totalprice = $totalprice;
             $hotel -> pool = 'true';
             $hotel -> bar = 'false';
             $hotel -> spa = 'false';
@@ -173,18 +171,21 @@
 
             $hotel -> print_hotel();
           }
+
+          //Getting total price of hotels
+          $numberdays = $_POST['numdays'];
+          $totalprice;
+            
+          $totalprice = $numberdays * $hotel->price; 
+          echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
+
         echo "</div>"; 
       } 
+
     ?>
     </center>
 
-    <?php
-     /* $numberdays = $_POST['numdays'];
-      $totalprice;
-      
-      $totalprice = $numberdays * $hotel->price; 
-      echo $totalprice;*/
-    ?>
+    
 
   </body>
 </html>   
