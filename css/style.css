@@ -64,7 +64,7 @@ span#africa {
 	font-size: 4rem;
 	color:white;
 }
-}
+
 /*==========================   Styling the submit button  ============================*/
 .btn-primary {
 	color: #fff;
@@ -88,10 +88,6 @@ span#africa {
     from { width: 0 }
 }
 
-
-
-
-
 /*=============================================================*/
 
 .navbar-light .navbar-nav .nav-link {
@@ -99,6 +95,7 @@ span#africa {
     font-weight: 700;
     margin-left: 2rem;
 }
+
 .cover
 {
 	background: linear-gradient( rgba(0,0,0,0.85),rgba(0,0,0,0.50)), url(../images/fun.jpg);
@@ -111,11 +108,13 @@ span#africa {
 	position: relative;
 	color: #ffffffbd;
 }
+
 .colomCenter
 {
 	margin: 0 auto;
 	padding-top: 8rem;
 }
+
 #headline
 {
 	padding-bottom: 2.5rem;
@@ -126,28 +125,34 @@ span#africa {
 {
 	padding-top: 0.80rem;
 }
+
 input {
     background-color: #f8f9fad6;
 	margin-bottom: 2px;
 	border: 1px solid black;
 }
+
 select#hotel
 {
 	background-color: #f8f9fad6;
 	margin-bottom: 2px;
 	border: 1px solid black;;
 }
+
 img{
 	width: 20%;
 }
+
 .displayTopGap
 {
 	padding-top: 5rem;
 }
+
 .displayOutput
 {
 	background-color:rgb(189, 189, 196);
 }
+
 .ContainerGap
 {
 	padding-top: 3rem;
