@@ -1,195 +1,69 @@
 <!doctype html>
+                              <!-- CREATORS ~ LEE_LEIBRANDT || RAPHEAL_BLACK || CAMERON  -->
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="author" content="Raphael Wakipepa">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/style.css" text="text/css">
-    <title>Hotel Trivago</title> 
+    <link href='https://fonts.googleapis.com/css?family=Rajdhani:400,500,700' rel='stylesheet' type='text/css'> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>LEERAC</title>
   </head>
-
+  <!--  MAIN PROGRAM  -->
   <body>
-   <!--MAIN PROGRAM-->
 
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="img/AVENGERS LOGO VERSION 2.png" width="200px"alt="avenger">
-      </a>
-      <center><h1>LERACA Hotel</h1>  
-    </nav>
+    <div id="wrap">
 
-   <center><div class="grid-item">
-      <!--user inputs-->
-      <form action="index.php" method="post" class="form">
-          Please provide following details below:<br>
-          <input type="text" name="name" placeholder="Name" required><br>
-          <input type="text" name="surname" placeholder="Surname" required><br>
-          <input type="email" name="email" placeholder="Email" required><br>
-
-          Hotel Details <br>
-          Compare hotels by selecting one from each dropdown: <br>
-          <!--Dropdown output hotel name array-->
-          1 <select name="hotel1" id="hotel" required>
-            <option>---Select Hotel Here---</option>
-            <?php
-              $hotelname = array("Sea Point Inn", "Mojo Hotel");
-              foreach ($hotelname as $hotel) {
-            ?>
-            <center><option> <?php echo $hotel; ?> </option>
-              <?php } ?></center>
-          </select>
-
-          2 <select name="hotel2" id="hotel" required>
-            <option>---Select Hotel Here---</option>
-            <?php 
-              $hotelname = array("Sea Point Inn", "Mojo Hotel");
-              foreach ($hotelname as $hotel) {
-            ?>
-            <option> <?php echo $hotel; ?> </option>
-              <?php } ?>
-          </select><br>
-
-          <script type="text/javascript">
-            //Getting number of days
-            function GetDays()
-            {
-              var dropdt = new Date(document.getElementById("drop_date").value);
-              var pickdt = new Date(document.getElementById("pick_date").value);
-              return parseInt((dropdt - pickdt) / (24 * 3600 * 1000));
-            }
-            //Calling number days
-            function cal()
-            {
-              if(document.getElementById("drop_date"))
-              {
-                document.getElementById("numdays2").value=GetDays();
-              }  
-            }
-          </script>
-
-          <div id="reserve_form">
-            <div id="pickup_date"><p><label class="form">Check-In:</label><input type="date" class="textbox" id="pick_date" name="pickup_date" onchange="cal()"/></p></div>
-            <div id="dropoff_date"><p><label class="form">Check-Out:</label><input type="date" class="textbox" id="drop_date" name="dropoff_date" onchange="cal()"></p></div>
-            <div id="numdays"><label class="form">Number of days:</label><input type="text" class="textbox" id="numdays2" name="numdays"/>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#"><h1>LERACA</h1></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">DEALS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">CONTACT</a>
+                </li>
+              </ul>
           </div>
-        <input type="submit">
-      </form>
+        </div>  
+      </nav>
+
+      <div class "container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="jumbotron">
+              <div class="container text-center text-white cssanimation typing">
+                <h1>with <br><span id="africa">LERACA.C<span id="second">O</span>M </span></h1>
+                <p class="lead">Find the best hotel deals & Save more</p>
+                <a class="btn btn-primary btn-lg" href="functionality.php" role="button">Search now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-
-  
-    <br> 
-
-    <center>
-    <?php
-      
-      //LINKING EXTERNAL PHP PAGE
-      include 'class.php';
-
-      //Logical arguments
-      //Logical outputs for hotel one
-      if($_POST)
-      {
-      echo "<div class='grid-item'>";
-        if ($_POST['hotel1'] == $hotelname[0])
-        {
-          $hotel = new Hotel1;
-          
-          $hotel -> name = $_POST['hotel1'];
-          $hotel -> photo =  'sun.jpeg';
-          $hotel -> price = 500;
-          $hotel -> checkin = $_POST['pickup_date'];
-          $hotel -> checkout = $_POST['dropoff_date'];
-          $hotel -> numberdays = $_POST['numdays'];
-          //$hotel -> totalprice = $totalprice;
-          $hotel -> pool = 'Yes';
-          $hotel -> bar = 'Yes';
-          $hotel -> spa = 'Yes';
-          $hotel -> kidfriendly = 'Yes';
-
-          $hotel -> print_hotel();
-        }
-        elseif ($_POST['hotel1'] == $hotelname[1])
-        {
-          $hotel = new Hotel1;
-
-          $hotel -> name = $_POST['hotel2'];
-          $hotel -> photo = 'break.jpg'; 
-          $hotel -> price = 350;
-          $hotel -> checkin = $_POST['pickup_date'];
-          $hotel -> checkout = $_POST['dropoff_date'];
-          $hotel -> numberdays = $_POST['numdays'];
-         // $hotel -> totalprice = $totalprice;
-          $hotel -> pool = 'Yes';
-          $hotel -> bar = 'No';
-          $hotel -> spa = 'No';
-          $hotel -> kidfriendly = 'YesYes';
-
-          $hotel -> print_hotel();
-        }
-        //Getting total price of hotels
-        $numberdays = $_POST['numdays'];
-        $totalprice;
-          
-        $totalprice = $numberdays * $hotel->price; 
-        echo "<br />";
-        echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
-      echo "</div>"; 
-
-        //Logical outputs for hotel two
-        echo "<div class='grid-item'>";
-          if ($_POST['hotel2'] == $hotelname[0])
-          {
-            $hotel = new Hotel2;
-            
-            $hotel -> name = $_POST['hotel2'];
-            $hotel -> photo =  'sun.jpeg';
-            $hotel -> price = 500;
-            $hotel -> checkin = $_POST['pickup_date'];
-            $hotel -> checkout = $_POST['dropoff_date'];
-            $hotel -> numberdays = $_POST['numdays'];
-            //$hotel -> totalprice = $totalprice;
-            $hotel -> pool = 'Yes';
-            $hotel -> bar = 'Yes';
-            $hotel -> spa = 'Yes';
-            $hotel -> kidfriendly = 'Yes';
-
-            $hotel -> print_hotel();
-          }
-          elseif ($_POST['hotel2'] == $hotelname[1])
-          {
-            $hotel = new Hotel2;
-
-            $hotel -> name = $_POST['hotel2'];
-            $hotel -> photo = 'break.jpg'; 
-            $hotel -> price = 350;
-            $hotel -> checkin = $_POST['pickup_date'];
-            $hotel -> checkout = $_POST['dropoff_date'];
-            $hotel -> numberdays = $_POST['numdays'];
-            //$hotel -> totalprice = $totalprice;
-            $hotel -> pool = 'Yes';
-            $hotel -> bar = 'No';
-            $hotel -> spa = 'No';
-            $hotel -> kidfriendly = 'Yes';
-
-            $hotel -> print_hotel();
-          }
-
-          //Getting total price of hotels
-          $numberdays = $_POST['numdays'];
-          $totalprice;
-            
-          $totalprice = $numberdays * $hotel->price; 
-          echo "<br />";
-          echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
-
-        echo "</div>"; 
-      } 
-    ?>
-    <?php
-     echo "<button><a href='booking.php'>Book now</a></button>";
-    ?>
-    </center>
-
-    
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+    <script>
+	    new WOW().init();
+	  </script> 
   </body>
-</html>   
+</html>
