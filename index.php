@@ -1,5 +1,5 @@
 <!doctype html>
-                              <!-- CREATORS ~ LEE_LEIBRANDT || RAPHEAL_BLACK || CAMERON  -->
+  <!-- CREATORS ~ LEE_LEIBRANDT || RAPHEAL || CAMERON  -->
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
     <link rel="stylesheet" href="css/style.css">
 
-    <title>LEERAC</title>
+    <title>LERACA</title>
   </head>
   <!--  MAIN PROGRAM  -->
   <body>
@@ -22,15 +22,12 @@
 
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand" href="#"><h1>LERACA</h1></a>
+          <a class="navbar-brand" href="index.php"><h1>LERACA</h1></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">DEALS</a>
                 </li>
@@ -47,9 +44,9 @@
           <div class="col-sm-6">
             <div class="jumbotron">
               <div class="container text-center text-white cssanimation typing">
-                <h1>with <br><span id="africa">LERACA.C<span id="second">O</span>M </span></h1>
+                <h1>with <br><span id="africa">LERACA.C<span id="second">O</span>M</span></h1>
                 <p class="lead">Find the best hotel deals & Save more</p>
-                <a class="btn btn-primary btn-lg" href="functionality.php" role="button">Search now</a>
+                <a class="btn btn-primary btn-lg" href="functionality.php" role="button">Search</a>
               </div>
             </div>
           </div>

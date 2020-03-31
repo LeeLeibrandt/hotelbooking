@@ -6,7 +6,7 @@
     <link href='https://fonts.googleapis.com/css?family=Rajdhani:400,500,700' rel='stylesheet' type='text/css'> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" text="text/css">
-    <title></title> 
+    <title>LERACA</title> 
   </head>
 
   <body>
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">HOME</a>
+              <a class="nav-link" href="index.php">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">DEALS</a>
@@ -43,14 +43,14 @@
       <h1 id="headline">Your dream hotel at the best price.</h1>
       <!--user inputs-->
       <form action="functionality.php" method="post">
-        <div id="userDetails">
+        <div class="details">
           <p>Please provide following details below:</p>
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="text" name="surname" placeholder="Surname" required>
+          <input type="text" name="name" placeholder="Name" required><br>
+          <input type="text" name="surname" placeholder="Surname" required><br>
           <input type="email" name="email" placeholder="Email" required>
-        </div>
+        </div><br>
                 
-        <div id="hotelDetails">
+        <div class="details">
           <p>Selecting one hotel from each dropdown:</p> 
           <!--Dropdown output hotel name array-->
           1. <select name="hotel1" id="hotel" required>
@@ -74,7 +74,14 @@
           </select><br>
         </div>
                 
+        <div id="reserve_form">
+          <label class="form">Check in : </label><input type="date" class="textbox" id="pick_date" name="pickup_date" onchange="cal()"/><br>
+          <label class="form">Check out : </label><input type="date" class="textbox" id="drop_date" name="dropoff_date" onchange="cal()">
+          <div id="numdays"><label class="form">Total days : </label><input type="text"  id="numdays2" name="numdays"/>
+          </div>
+        </div>
         <div>
+
         <script type="text/javascript">
           //Getting number of days
           function GetDays()
@@ -92,13 +99,6 @@
             }  
           }
         </script>
-
-        <div id="reserve_form">
-          <label class="form">Check in : </label><input type="date" class="textbox" id="pick_date" name="pickup_date" onchange="cal()"/>
-          <label class="form">Check out : </label><input type="date" class="textbox" id="drop_date" name="dropoff_date" onchange="cal()">
-          <div id="numdays"><label class="form">Total days : </label><input type="text"  id="numdays2" name="numdays"/>
-          </div>
-        </div>
                
         <input id="submitButon" class="btn btn-primary btn-md" role="button" type="Submit">
              

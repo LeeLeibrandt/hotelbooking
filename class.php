@@ -34,7 +34,8 @@
         public $dir = 'images/';
 
         public function print_hotel()
-        {       
+        {    
+            echo "<div class ='col-4-sm'>";   
             echo "<h4 class='text-center'>{$this->name}</h4>".self::BR;
             echo "<img src = '{$this->dir}{$this->photo}'>".self::BR;
             echo "Daily Rate: R".$this->price.self::BR;
@@ -46,7 +47,8 @@
             echo "Pool: ".$this->pool.self::BR;
             echo "Bar: ".$this->bar.self::BR;
             echo "Spa: ".$this->spa.self::BR;
-            echo "kid friendly: ".$this->kidfriendly.self::BR;       
+            echo "kid friendly: ".$this->kidfriendly.self::BR;   
+            echo "</div>";  
         }
     }
 
@@ -62,6 +64,7 @@
 
         public function print_hotel()
         {       
+            echo "<div class ='col-4-sm'>";
             echo "<h4>{$this->name}</h4>".self::BR;
             echo "<img src = '{$this->dir}{$this->photo}'>".self::BR;
             echo "Daily Rate: R".$this->price.self::BR;
@@ -73,7 +76,8 @@
             echo "Pool: ".$this->pool.self::BR;
             echo "Bar: ".$this->bar.self::BR;
             echo "Spa: ".$this->spa.self::BR;
-            echo "kidfriendly: ".$this->kidfriendly.self::BR;        
+            echo "kidfriendly: ".$this->kidfriendly.self::BR;   
+            echo "</div>";       
         }
     }
 ?>
