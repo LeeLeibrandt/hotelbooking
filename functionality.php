@@ -9,10 +9,45 @@
     <title>LERACA</title> 
   </head>
 
+  <style>
+    input, select{
+      width:100%;
+    }
+
+    .details{
+      border: none;
+    }
+
+    img{
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .ContainerGap
+    {
+      padding-top: 1rem;
+    }
+
+    .hotel{
+      text-align:center;
+    }
+
+    .btn {
+      width:100%;
+    }
+
+    .form{
+      max-width:600px;
+    }
+
+    .btn-outline-primary{
+      margin-bottom:2rem; 
+    }
+
+  
+  </style>
   <body>
-
     <nav class="navbar navbar-expand-lg navbar-light navbarColor">
-
       <div class="container">
         <a class="navbar-brand" href="#"><h1>LERACA</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,18 +77,18 @@
 
       <h1 id="headline">Your dream hotel at the best price.</h1>
       <!--user inputs-->
-      <form action="functionality.php" method="post">
+      <center><form action="functionality.php" method="post" class="form">
         <div class="details">
-          <p>Please provide following details below:</p>
+          <center><p>Please provide following details below:</p></center>
           <input type="text" name="name" placeholder="Name" required><br>
           <input type="text" name="surname" placeholder="Surname" required><br>
           <input type="email" name="email" placeholder="Email" required>
         </div><br>
                 
         <div class="details">
-          <p>Selecting one hotel from each dropdown:</p> 
+          <center><p>Selecting one hotel from each dropdown:</p> </center>
           <!--Dropdown output hotel name array-->
-          1. <select name="hotel1" id="hotel" required>
+          <select name="hotel1" id="hotel" required>
             <option>-Select Hotel Here-</option>
             <?php
               $hotelname = array("TABLE BAY HOTEL", "CAPE GRACE HOTEL");
@@ -63,7 +98,7 @@
             <?php } ?>
           </select>
 
-          2. <select name="hotel2" id="hotel" required>
+          <select name="hotel2" id="hotel" required>
             <option>-Select Hotel Here-</option>
             <?php 
               $hotelname = array("TABLE BAY HOTEL", "CAPE GRACE HOTEL");
@@ -81,6 +116,7 @@
           </div>
         </div>
         <div>
+              </center>
 
         <script type="text/javascript">
           //Getting number of days
@@ -100,25 +136,24 @@
           }
         </script>
                
-        <input id="submitButon" class="btn btn-primary btn-md" role="button" type="Submit">
+        <input id="submitButon" class="btn btn-outline-primary btn-md" role="button" type="Submit" value="SUBMIT">
              
       </form>
     </div>
 
     <?php
       //LINKING EXTERNAL PHP PAGE
-  
-      echo"<div class='container-fluid displayOutput'>";
+
         //Logical arguments
         //Logical outputs for hotel one
         if($_POST)
         {
           echo"<div class='container ContainerGap'>";
-            echo"<div class='row'>";
-              echo"<div class='col-4-sm ' style='padding:7rem 5rem; margin-top:2rem; border: 1px solid black;'>";
+           
+              
                 include 'class.php';
-              echo"</div>";
-              echo"<div class='col-4-sm ' style='padding:2rem 5rem;'>";
+              
+                echo"<div class='col-4-sm ' style='padding:5rem 5rem; margin-top:1rem; border: 1px solid black;'>";
                 
                 if ($_POST['hotel1'] == $hotelname[0])
                 {
@@ -162,12 +197,12 @@
                 //Formula   
                 $totalprice = $numberdays * $hotel->price;
 
-                echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
+                echo "<center><font size = '5px'>Total price: R".$totalprice."</font size></center>";
                 echo"<br>";
-                echo"<a class='btn btn-primary btn-md' href='Booking.php' role='button'>Book now</a>"; 
+                echo"<a class='btn btn-outline-primary btn-md' href='Booking.php' role='button'>Book now</a>"; 
               echo"</div>";
                         
-            echo"<div class='col-4-sm ' style='padding:2rem 5rem;'>";
+          echo"<div class='col-4-sm ' style='padding:5rem 5rem; margin-top:1rem; border: 1px solid black;'>";
             //Logical outputs for hotel two
                     
             if ($_POST['hotel2'] == $hotelname[0])
@@ -212,13 +247,12 @@
             $totalprice;
                               
             $totalprice = $numberdays * $hotel->price; 
-            echo "<font size = '5px'>Total price: R".$totalprice."</font size>";
+            echo "<center><font size = '5px'>Total price: R".$totalprice."</font size></center>";
             echo"<br>";
-            echo"<a class='btn btn-primary btn-md' href='Booking.php' role='button'>Book now</a>"; 
+            echo"<a class='btn btn-outline-primary btn-md' href='Booking.php' role='button'>Book now</a>"; 
           echo"</div>";
         } 
-      echo"</div>";
-      echo"<hr>";
+     
 
     ?>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
